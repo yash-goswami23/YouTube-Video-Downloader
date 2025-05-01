@@ -9,8 +9,8 @@ Built using **GetX**, `youtube_explode_dart`, and `ffmpeg_kit_flutter_minimal`.
 
 - ✅ Paste YouTube URL to fetch video metadata  
 - ✅ Select resolution (e.g., 1080p, 720p, 480p...)  
-- ✅ Show live download progress  
-- ✅ Save videos to storage folder  
+- ✅ Show live download progress 
+- ✅ Save videos to custom storage folder    
 - ✅ View downloaded videos in history  
 - ✅ Tap to open the downloaded video  
 - ✅ Persistent local storage with `get_storage`  
