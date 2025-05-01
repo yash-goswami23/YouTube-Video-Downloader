@@ -1,9 +1,7 @@
-import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:native_youtube_download_manager/controllers/home_controllers.dart';
 import 'package:native_youtube_download_manager/screens/download_list_screen.dart';
-import 'package:native_youtube_download_manager/utils/custom_toast.dart';
 import 'package:native_youtube_download_manager/widgets/btn.dart';
 import 'package:native_youtube_download_manager/widgets/video_card.dart';
 
@@ -42,7 +40,7 @@ class HomeScreenNew extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 18.0),
                         child: TextField(
                           controller: controller.urlController,
-                          // enabled: false,
+
                           decoration: InputDecoration(
                             labelText: 'Enter YouTube URL',
                             suffixIcon: IconButton(
@@ -80,11 +78,6 @@ class HomeScreenNew extends StatelessWidget {
                   const SizedBox(height: 20),
 
                   btn(onTap: controller.fetchVideoInfo, txt: "Search Video"),
-                  // const SizedBox(height: 20),
-
-                  // else
-                  //   const SizedBox(height: 20),
-                  // Text("Not Video Fetch"),
                 ],
               ),
             ),
@@ -94,5 +87,3 @@ class HomeScreenNew extends StatelessWidget {
     );
   }
 }
-
-//https://youtu.be/dFlDRhvM4L0?si=6YEQsDeOv17VHtck

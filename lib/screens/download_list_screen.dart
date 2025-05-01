@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:native_youtube_download_manager/utils/custom_toast.dart';
 import 'package:open_file/open_file.dart';
 import '../controllers/home_controllers.dart';
 
 class DownloadHistoryScreen extends StatelessWidget {
+  DownloadHistoryScreen({super.key});
   final controller = Get.find<HomeController>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +49,10 @@ class DownloadHistoryScreen extends StatelessWidget {
             ...controller.downloadedVideos.map(
               (video) => GestureDetector(
                 onTap: () {
-                  OpenFile.open(video.path);
+                  showToast(
+                    "path: ${controller.downloadingVideo.value!.path.toString()}",
+                  );
+                  OpenFile.open(controller.downloadingVideo.value!.path);
                 },
 
                 child: Card(

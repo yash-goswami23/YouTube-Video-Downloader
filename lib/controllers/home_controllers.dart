@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:native_youtube_download_manager/services/storage_service.dart';
 import '../models/video_info_model.dart';
 import '../services/youtube_service.dart';
-// import '../services/storage_service.dart';
+
 import '../utils/custom_toast.dart';
 
 class HomeController extends GetxController {
@@ -17,7 +17,6 @@ class HomeController extends GetxController {
   var downloadedVideos = <VideoInfoModel>[].obs;
   final resolutions = <String>[].obs;
   final selectedResolution = ''.obs;
-
   final videoInfo = Rxn<VideoInfoModel>();
   final urlController = TextEditingController();
   @override
@@ -48,13 +47,10 @@ class HomeController extends GetxController {
     isLoading.value = true;
     try {
       final info = await YoutubeService.fetchVideo(url);
-
-      print("error info: ${info.toJson()}");
       videoInfo.value = info;
       selectedResolution.value = "Auto";
       await fetchResolutions(info.videoId);
     } catch (e) {
-      print("error is: $e");
       showToast("Error fetching video: $e");
     }
     isLoading.value = false;
@@ -87,6 +83,7 @@ class HomeController extends GetxController {
       onDone: () {
         downloadProgress.value = 1.0;
         isDownloading.value = false;
+        
         downloadingVideo.value = null;
         downloadedVideos.add(
           VideoInfoModel(

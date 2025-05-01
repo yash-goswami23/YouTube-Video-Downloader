@@ -81,7 +81,6 @@ class _ResolutionCardState extends State<ResolutionCard> {
                     controller.startDownload(controller.videoInfo.value!);
                     await Future.delayed(Duration(milliseconds: 100));
                     Get.to(DownloadHistoryScreen());
-                    // controller.goToDownloadScreen();
                   },
           child: Container(
             alignment: AlignmentDirectional.center,

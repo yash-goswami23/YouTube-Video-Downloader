@@ -19,7 +19,6 @@ Future<void> handleStoragePermission() async {
   if (Platform.isAndroid) {
     var status = await Permission.manageExternalStorage.request();
     if (status.isGranted) {
-      print("✅ Storage permission granted");
     } else {
       openAppSettings(); // optional fallback
       Get.snackbar("Permission Required", "Please grant full storage access.");
